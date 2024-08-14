@@ -1,4 +1,4 @@
-# Drama Queen
+# Drama Queen 🎭👸
 
 A Godot plugin for writing scripted events, aka "dramas" or "cutscenes" in your game.
 
