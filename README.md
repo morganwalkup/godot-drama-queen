@@ -8,6 +8,8 @@ Most people author this sort of thing inside the AnimationPlayer, but DramaQueen
 
 Exposes a `DramaQueen` autoloaded singleton for playing `*.drama.gd` files known as `Drama` scripts.
 
+Production tested! This is the system I use in my own game, [Code Zodiac](https://store.steampowered.com/app/2403880/Code_Zodiac/)
+
 
 ### How to Use
 
