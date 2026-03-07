@@ -9,10 +9,13 @@ var scene
 func _ready():
     tree = null
     scene = null
-    var main_loop = Engine.get_main_loop()
-    if main_loop is SceneTree:
-        tree = main_loop
-        scene = main_loop.current_scene
+    print("Drama ready called")
+    if is_instance_valid(DramaQueen):
+        tree = DramaQueen.get_tree()
+        scene = tree.current_scene
+        print("Drama tree and scene found")
+    else:
+        print("Drama tree and scene not found")
 
 func _play():
     pass

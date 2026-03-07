@@ -35,7 +35,7 @@ func _ready():
 
 Your `Drama` script should be responsible for setting up any nodes involved in the `Drama`. Most likely, the first few lines of your `_play()` function will focus on setting up these nodes.
 
-If you are using Morgan Walkup's `UtilityAI` plugin, we recommend creating a general-purpose `Drama` task that pauses the decision timer while a `Drama` is playing. All `UtilityTaskManagers` in the scene should be interrupted with the `Drama` task when the `Drama` script starts playing.
+If you are using Morgan Walkup's `UtilityAI` plugin, we recommend creating a general-purpose `drama.task.gd` task that pauses the decision timer while a `Drama` is playing. All `UtilityTaskManagers` in the scene should be interrupted with the `Drama` task when the `Drama` script starts playing.
 
 
 ### DramaQueen Singleton
@@ -46,6 +46,7 @@ The `DramaQueen` singleton plays one `Drama` at a time end emits signals before 
 
 - is_playing - boolean - True if DramaQueen is actively playing a drama script. False otherwise
 - current_drama - Drama - The active drama script played by DramaQueen
+- blackboard - Dictionary - Temporarily holds data for the current drama. The drama trigger should store values here. The blackboard is erased when the current drama ends.
 
 #### DramaQueen Singleton Signals
 
@@ -54,7 +55,7 @@ The `DramaQueen` singleton plays one `Drama` at a time end emits signals before 
 
 #### DramaQueen Singleton Methods
 
-- play(drama: Drama) - Plays the given drama script. Can be awaited.
+- play(drama: GDScript) - Plays the given drama script. Can be awaited.
 
 
 ### Drama Class
