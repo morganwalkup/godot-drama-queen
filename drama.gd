@@ -7,8 +7,12 @@ var tree
 var scene
 
 func _ready():
-    tree = DramaQueen.get_tree()
-    scene = tree.current_scene
+    tree = null
+    scene = null
+    var main_loop = Engine.get_main_loop()
+    if main_loop is SceneTree:
+        tree = main_loop
+        scene = main_loop.current_scene
 
 func _play():
     pass
